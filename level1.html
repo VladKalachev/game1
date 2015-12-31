@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ru"> <!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Game_1</title>
+	<meta name="description" content="">
+
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="libs/animate/animate.css">
+	
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
+
+	<script src="libs/modernizr/modernizr.js"></script>
+	
+	
+<script src="jquery-1.7.1.min.js"></script>
+</head>
+
+<body>
+
+<div id= "live">
+	<div id= "zd"></div>
+</div>
+
+<div id="sloi1" style="height: 1000px;">
+
+		<div id="box1"></div>
+
+
+		<div id="box2" ></div>
+
+		<div id="box3" class="kub" style="left: 0px; top: 210px;"></div>
+			
+			<!-- трава -->
+		<div class="kust1"></div>
+		
+		<div class="kust1 kust2"></div>
+		<div class="kust1 kust3"></div>
+		<div class="kust1 kust4"></div>
+		<div class="kust1 kust5"></div>
+		<div class="kust1 kust6"></div>
+		<div class="kust1 kust7"></div>
+		<div class="kust1 kust8"></div>
+		<div class="kust1 kust9"></div>
+			
+			
+			
+		
+			<!-- кактус -->
+		<div id="cact" class="cact"></div>
+		<div id="cact1" class="cact cact1"></div>
+		<div id="cact2" class="cact cact2"></div>
+		<div id="cact3" class="cact cact3"></div>
+		
+		<!-- конец игры -->
+		<div class="game-over">
+			<span>Для продолжения кликни мышкой!</span>
+		</div>
+		
+</div>
+
+	
+<script>
+var kub1 = $(".kub"),
+	box = $("#box1").offset(),
+	box2 = $("#box2");
+	
+console.log(kub1);
+console.log(box);
+console.log(box2);
+//if (kub1 == box) {
+//	console.log(111);
+//};
+
+//if (kub1.offsetLeft <= box.offsetLeft + box.offsetWidth && kub1.offsetLeft + kub1.offsetWidth  >=  box.offsetLeft && kub1.offsetTop + kub1.offsetHeight >=  box.offsetTop && kub1.offsetTop <= box.offsetTop +  box.offsetHeight) {
+//console.log (111);
+//};
+
+function handler(e) {
+var kub = $(".kub");
+var kub1 = $(".kub").offset();
+
+		var KEY_CODE = {
+		  LEFT: 37,
+		  UP: 38,
+		  RIGHT: 39,
+		  DOWN: 40
+		};
+		
+//событие кнопок
+	switch(e.keyCode) {
+  case KEY_CODE.LEFT:
+  $(".kub").css( "background-position", "0px -48px");
+    //console.log("налево");
+	//kub.css("left","-10px");
+	//console.log(kub1);
+	kub.offset(function(i, coord){
+        var  newCoord = {};
+        newCoord.left = coord.left - 10;
+		return newCoord;
+ });
+
+	
+  break;
+  case KEY_CODE.UP:
+  $(".kub").css( "background-position", "0px 49px");
+    //console.log("вверх");
+	//kub.css("top","-10px");
+	//console.log(kub1);
+	kub.offset(function(i, coord){
+        var  newCoord = {};
+        newCoord.top = coord.top - 10;
+		return newCoord;
+ });
+	
+  break;
+  case KEY_CODE.RIGHT:
+	$(".kub").css( "background-position", "0px 96px");
+    //console.log("направо");
+	//kub.css("left","10px");
+	//console.log(kub1);
+	kub.offset(function(i, coord){
+        var  newCoord = {};
+        newCoord.left = coord.left + 10;
+		return newCoord;
+ });
+	
+	
+  break;
+  case KEY_CODE.DOWN:
+  
+  $(".kub").css( "background-position", "0px 0px");
+   //console.log("вниз");
+   //kub.css("top","10px");
+   //console.log(kub1);
+   
+   kub.offset(function(i, coord){
+        var  newCoord = {};
+        newCoord.top = coord.top + 10;
+		return newCoord;
+ });
+   
+  break;      
+  default:
+    console.log("другая кнопка");
+};
+		
+		
+};
+
+// инициализируем событие
+window.addEventListener('keydown', handler, false);
+window.addEventListener('keypress', handler, false);
+
+var box1 = document.getElementById("box1");
+var box2 = document.getElementById("box2");
+var box3 = document.getElementById("box3");
+var cact = document.getElementById("cact");
+var cact1 = document.getElementById("cact1");
+var cact2 = document.getElementById("cact2");
+var cact3 = document.getElementById("cact3");
+	
+	function rect2Rect(obj1, obj2) {
+	   return ( obj1.offsetLeft <= obj2.offsetLeft + obj2.offsetWidth && obj1.offsetLeft + obj1.offsetWidth  >=  obj2.offsetLeft && obj1.offsetTop + obj1.offsetHeight >=  obj2.offsetTop && obj1.offsetTop <= obj2.offsetTop +  obj2.offsetHeight );
+	}
+
+	function move() {
+	   if(!rect2Rect(box1, box3)) {
+	     setTimeout(function() {	
+		   move();
+	     }, 50);
+	   }
+	   else{
+	     alert("Столкновение");
+	   }
+	}
+	move();
+	
+	function move2() {
+	   if(!rect2Rect(box2, box3)) {
+	     setTimeout(function() {	
+		   move2();
+	     }, 50);
+	   }
+	   else{
+	     alert("Столкновение");
+	   }
+	}
+	move2();
+	
+	function move3() {
+	   if(!rect2Rect(cact, box3)) {
+	     setTimeout(function() {	
+		   move3();
+	     }, 50);
+	   }
+	   else{
+		 $("#zd").css( "width" ,"0px");
+		 
+		 setTimeout("$('.game-over').css( 'display' , 'block' );", 1000);
+		  $('.game-over').on( 'click', function() {
+			location.reload();
+			window.location.pathname ="C:/Users/v.kalachev/Desktop/js/prim1/index.html";
+		 });
+		 //alert("Нажмите на любую клавишу что бы продолжисть!");
+		 //$(body).append("<div class="end"></div>");
+	   }
+	}
+	move3();
+	
+	function move4() {
+	   if(!rect2Rect(cact1, box3)) {
+	     setTimeout(function() {	
+		   move4();
+	     }, 50);
+	   }
+	   else{
+		 $("#zd").css( "width" ,"0px");
+		 
+		 setTimeout("$('.game-over').css( 'display' , 'block' );", 1000);
+		  $('.game-over').on( 'click', function() {
+			location.reload();
+			window.location.pathname ="C:/Users/v.kalachev/Desktop/js/prim1/index.html";
+		 });
+		 //alert("Нажмите на любую клавишу что бы продолжисть!");
+		 //$(body).append("<div class="end"></div>");
+	   }
+	}
+	move4();
+	
+		function move5() {
+	   if(!rect2Rect(cact2, box3)) {
+	     setTimeout(function() {	
+		   move5();
+	     }, 50);
+	   }
+	   else{
+		 $("#zd").css( "width" ,"0px");
+		 
+		 setTimeout("$('.game-over').css( 'display' , 'block' );", 1000);
+		  $('.game-over').on( 'click', function() {
+			location.reload();
+			window.location.pathname ="C:/Users/v.kalachev/Desktop/js/prim1/index.html";
+		 });
+		 //alert("Нажмите на любую клавишу что бы продолжисть!");
+		 //$(body).append("<div class="end"></div>");
+	   }
+	}
+	move5();
+	
+		function move6() {
+	   if(!rect2Rect(cact3, box3)) {
+	     setTimeout(function() {	
+		   move6();
+	     }, 50);
+	   }
+	   else{
+		 $("#zd").css( "width" ,"0px");
+		 
+		 setTimeout("$('.game-over').css( 'display' , 'block' );", 1000);
+		  $('.game-over').on( 'click', function() {
+			location.reload();
+			 window.location.pathname ="C:/Users/v.kalachev/Desktop/js/prim1/index.html";
+		 });
+		 //alert("Нажмите на любую клавишу что бы продолжисть!");
+		 //$(body).append("<div class="end"></div>");
+	   }
+	}
+	move6();
+
+
+
+</script>
+	<!-- Здесь пишем код -->
+	
+	<div class="hidden"></div>
+
+	<div class="loader">
+		<div class="loader_inner"></div>
+	</div>
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+
+	<!--<script src="libs/jquery/jquery-1.11.2.min.js"></script>-->
+	
+	
+	<script src="libs/waypoints/waypoints.min.js"></script>
+	<script src="libs/animate/animate-css.js"></script>
+	<script src="libs/plugins-scroll/plugins-scroll.js"></script>
+	
+	<script src="js/common.js"></script>
+	
+</body>
+</html>

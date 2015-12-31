@@ -1,0 +1,236 @@
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	
+}
+body input:required:valid,
+body textarea:required:valid {
+	
+}
+
+html.js .loader {
+	background: none repeat scroll 0 0 #ffffff;
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 9999;
+}
+html.js .loader_inner {
+	background-image: url("../img/preloader.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #fff;
+	height: 60px;
+	width: 60px;
+	margin-top: -30px;
+	margin-left: -30px;
+	left: 50%;
+	top: 50%;
+	position: absolute;
+}
+
+body {
+	font-family: sans-serif;
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.6;
+	font-family: "RobotoRegular", sans-serif;
+	overflow-x: hidden;
+}
+.hidden {
+	display: none;
+}
+
+.kub {
+	position: absolute;
+	background: url(../img/event1.png);
+	background-position: 0px 0px;
+    width: 30px;
+    height: 49px;
+	z-index: 1;
+	top: 200px;
+    left: 218px;
+}
+
+#sloi1 {
+	width: 500px;
+	height: 500px;
+	background: url(../img/fon.jpg);
+	background-position: 21px 41px;
+}
+
+.tr1 {
+	width: 125px;
+    height: 120px;
+    background: url(../img/tileset.png);
+    background-position: -131px 926px;
+    position: absolute;
+    top: 288px;
+    left: 100px;
+	z-index: 2;
+}
+
+.tr3 {
+	top: 380px;
+    left: 1px;
+}
+
+.tr2 {
+	top: 0px;
+    left: 375px;
+}
+
+.kust1 {
+	width: 35px;
+    height: 30px;
+    background: url(../img/tileset.png);
+    background-position: -412px 798px;
+    position: absolute;
+    top: 56px;
+    left: 38px;
+	z-index: 0;
+}
+
+.kust2 {
+    left: 302px;
+}
+
+.kust3 {
+    left: 330px;
+    top: 447px;
+}
+
+.kust4 {
+    left: 385px;
+    top: 367px;
+}
+
+.kust5 {
+    left: 130px;
+    top: 430px;	
+}
+
+.kust6 {
+left: 203px;
+top: 50px;	
+}
+
+.kust7 {
+    left: 248px;
+    top: 50px;	
+}
+
+.kust8 {
+    top: 258px;
+    left: 246px;	
+}
+
+.kust9 {
+	top: 100px;
+	left: 130px;	
+}
+
+#box1 {
+	background: url(../img/event2.png);
+    background-position: -452px 769px;
+    width: 26px;
+    height: 49px;
+    position: absolute;
+    left: 60px;
+}
+
+#box2 {
+	width: 34px;
+    height: 34px;
+    background: url(../img/tileset.png);
+    background-position: -447px 770px;
+    position: absolute;
+    left: 222px;
+    top: 138px;
+}
+
+#live {
+	width: 181px;
+    height: 21px;
+    background: url(../img/live.png);
+    position: absolute;
+    z-index: 50;
+    top: 8px;
+    left: 312px;
+}
+
+#zd {
+	width: 166px;
+    height: 7px;
+    background-color: red;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+}
+
+.cact {
+	width: 32px;
+    height: 30px;
+    background: url(../img/tileset.png);
+    background-position: -448px 798px;
+    position: absolute;
+    left: 362px;
+    top: 138px;
+}
+
+.game-over {
+	width: 660px;
+    height: 500px;
+    background: url(../img/gameover.jpg);
+    z-index: 100;
+    position: absolute;
+	display: none;
+}
+.game-over span {
+	color: #fff;
+    position: absolute;
+    top: 328px;
+    left: 197px;
+}
+.cact1 {
+	 top: 400px;
+}
+.cact2 {
+	 top: 102px;
+}
+.cact3 {
+	left: 420px;
+    top: 418px;
+}
+
+.home {
+	width: 128px;
+    height: 131px;
+    background: url(../img/tileset.png);
+    background-position: -896px 224px;
+    position: absolute;
+    top: 159px;
+    left: 372px;
+}
